@@ -1,7 +1,10 @@
-function HelloWorld(){
+import React from "react";
+import Rotas from "./Rotas";
+
+function App(){
   return(
-    <h1>Hello World</h1>
-  );
+    <Rotas/>
+  )
 }
 
-export default HelloWorld;
+export default App;
