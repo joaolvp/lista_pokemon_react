@@ -4,7 +4,8 @@ const instance = axios.create({
     baseURL: 'https://pokeapi.co/api/v2/',
 });
 
-const api = {
+
+/*const api = {
     getType: async () => {
         try{
             const res = await instance.get(`/type`);
@@ -14,7 +15,7 @@ const api = {
             return undefined;
         }
     },
-    GetPokemon: async(type_id) => {
+    getPokemon: async(type_id) => {
         try{
             const res = await instance.get(`/type/${type_id}`);
             return res.data;
@@ -23,6 +24,6 @@ const api = {
             return undefined;
         }
     },
-}
+}*/
 
-export default api;
+export default instance;
