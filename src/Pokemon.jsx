@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import instance from "./Api";
 import { useParams } from "react-router-dom";
+import "./Pokemon.css"
 
 function Pokemon () {
   const { index } = useParams();
@@ -22,11 +23,14 @@ function Pokemon () {
   }, [index]);
 
   return (
-    <div>
+    <div> 
       <h1>Pokemons do tipo {data.name}</h1>
+      <hr/>
+      <br/>
       {data.pokemon?.map((pokemon, index) => (
         <div key={index}>
-          <p>{pokemon.pokemon.name}</p>
+          <p class="pokemon">{pokemon.pokemon.name}</p>
+          <br/>
         </div>
       ))}
     </div>

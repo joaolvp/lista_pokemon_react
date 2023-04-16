@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import instance from "./Api";
 import { Button, Card, CardActions, CardContent } from "@mui/material";
-import Pokemon from "./Pokemon";
 import {useNavigate} from "react-router-dom"
+import "./Home.css"
 
 
 function Home() {
@@ -28,17 +28,19 @@ function Home() {
   return (
     <div>
       <h1>Tipos de Pokemon</h1>
+      <hr/>
+      <br/>
       {data.length === 0 ? (<p>Carregando...</p>) : (
         data.results.map((type, index) => {
             console.log(index);
             return(
             <div className="type" key={index}>
-              <Card sx={{minWidth: 200, maxWidth:275, backgroundColor: "yellow"}}>
+              <Card sx={{minWidth: 200, maxWidth:275, backgroundColor: "#999999"}}>
                 <CardContent>
                     <h2>Tipo {type.name}</h2>
                 </CardContent>
                 <CardActions>
-                    <Button size="medium" type="submit" variant="contained"  onClick={() => navigate(`/pokemon/${index+1}`, { replace: false } )} >Veja Mais</Button>
+                    <Button sx={{margin: "0 auto", color: "white", borderColor: "#0e1217", '&:hover':{borderColor: "white"}}} size="medium" type="submit" variant="outlined"  onClick={() => navigate(`/pokemon/${type.url.split('/').slice(-2, -1)[0]}`, { replace: false } )} >Veja Mais</Button>
                 </CardActions>
               </Card>
               <br/>
